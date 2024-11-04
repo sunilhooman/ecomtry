@@ -1,0 +1,54 @@
+.dashboard-layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.3s ease; /* Smooth transition when toggling */
+    z-index: 100; /* Ensure it stays on top */
+}
+
+
+/* Main content styles */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease; /* Smooth transition */
+    margin-left: 30px; /* Initially aligned with closed sidebar */
+}
+
+.main-content.shifted {
+    margin-left: 250px; /* When sidebar is expanded */
+}
+
+/* Header styling */
+
+
+/* Content area styles */
+.content-area {
+    margin-left: 250px; /* When sidebar is expanded */
+}
+
+.content-area.shifted {
+
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth transition */
+    background-color: aqua;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+    .sidebar.open {
+        width: 250px;
+    }
+}

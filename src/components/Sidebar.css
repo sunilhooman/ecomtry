@@ -1,0 +1,74 @@
+/* Sidebar styles */
+.sidebar {
+  height: 100vh;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease; /* Smooth transition when toggling */
+  z-index: 100; /* Ensure it stays on top */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.sidebar.closed {
+  width: 70px; /* Closed state width */
+}
+
+.sidebar.open {
+  width: 250px; /* Expanded state width */
+}
+
+/* Menu button styles */
+.sidebar .menu-btn {
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #333;
+}
+
+.sidebar .menu-btn i {
+  font-size: 24px;
+}
+
+/* Sidebar menu item styles */
+.sidebar .sidebar-content {
+  padding: 20px 0;
+}
+
+.sidebar .sidebar-content .sidebar-menu-item {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar .sidebar-content .sidebar-menu-item:hover {
+  background-color: #555; /* Hover effect */
+}
+
+/* Content area styles */
+.content-area {
+  padding: 20px;
+  transition: margin-left 0.3s ease; /* Smooth transition */
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+  }
+
+  .sidebar.open {
+    width: 200px; /* Adjusted width for smaller screens */
+  }
+
+  .content-area {
+    margin-left: 70px; /* Align content with closed sidebar */
+  }
+
+  .content-area.shifted {
+    margin-left: 200px; /* Align content with expanded sidebar */
+  }
+}
